@@ -7,8 +7,8 @@ def consolidate_cart(cart)
       if !cart[key][:count]
         cart[key][:count] = 1
       else
-        cart.delete(item)
         cart[key][:count] += 1
+        cart.delete(item)
       end
     end
   end
