@@ -57,6 +57,7 @@ def apply_clearance(cart)
   cart.map do |key, value|
     p key
     p value
+    p cart[key][:clearance]
     if(cart[key][:clearance])
       cart[key][:price] = (cart[key][:price] * 0.8).round(2)
     end
