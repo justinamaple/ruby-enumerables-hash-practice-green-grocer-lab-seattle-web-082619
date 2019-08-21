@@ -1,7 +1,7 @@
 def consolidate_cart(cart)
   updated_cart = {}
   
-  cart.map do |item|
+  cart.each do |item|
     item.each_pair do |key, value|
       if !updated_cart[key]
         updated_cart[key] = value
