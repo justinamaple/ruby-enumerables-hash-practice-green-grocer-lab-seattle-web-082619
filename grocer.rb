@@ -43,7 +43,7 @@ end
 
 def create_new_item(new_key, new_price, clearance)
   {
-    { new_key => { 
+    new_key => { 
       :count => 0,
       :price => new_price,
       :clearance => clearance
