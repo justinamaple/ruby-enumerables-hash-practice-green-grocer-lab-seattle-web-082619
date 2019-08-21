@@ -54,7 +54,7 @@ def create_new_item(new_key, new_price, clearance)
 end
 
 def apply_clearance(cart)
-  cart.map do |item|
+  cart.map do |key, value|
     p item
     if(item[:clearance])
       item[:price] = (item[:price] * 0.8).round(2)
