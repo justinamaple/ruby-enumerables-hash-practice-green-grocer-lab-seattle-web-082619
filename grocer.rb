@@ -54,7 +54,10 @@ def create_new_item(new_key, new_price, clearance)
 end
 
 def apply_clearance(cart)
-  # code here
+  cart.map do |item|
+    if(item[:clearance])
+      
+  end
 end
 
 def checkout(cart, coupons)
