@@ -40,9 +40,11 @@ def apply_coupons(cart, coupons)
   updated_cart
 end
 
-def new_key(key)
+def get_new_key(key)
   key + " W/COUPON"
 end
+
+def get_new_price
 
 def create_new_item(new_key, new_price, clearance)
   { :count => 0, :price => new_price, :clearance => clearance }
