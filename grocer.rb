@@ -1,9 +1,8 @@
 def consolidate_cart(cart)
   cart.map do |item|
     item.each_pair do |key, value|
-      if !updated_cart[key]
-        updated_cart[key] = value
-        updated_cart[key][:count] = 1
+      if !cart[key][:count]
+        updated_cart[key] = 1
       else
         updated_cart[key][:count] += 1
       end
