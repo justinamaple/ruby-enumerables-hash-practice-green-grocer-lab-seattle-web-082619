@@ -26,16 +26,15 @@ def apply_coupons(cart, coupons)
 
           new_key = key + " W/COUPON"
           new_price = coupon[:cost] / coupon[:num]
-          clearance = cart[key][:clearance]
           
           if !updated_cart[new_key]
-            #updated_cart[new_key] = create_new_item(new_key, new_price, clearance)
+            updated_cart[new_key] = {}
             updated_cart[new_key][:count] = 0
             updated_cart[new_key][:price] = new_price
             updated_cart[new_key][:clearance] = cart[key][:clearance]
-          else
-            updated_cart[new_key][:count] += coupon[:num]
           end
+      
+          updated_cart[new_key][:count] += coupon[:num]
         end
       end
     end
