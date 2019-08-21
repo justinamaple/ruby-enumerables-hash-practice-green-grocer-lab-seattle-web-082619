@@ -68,12 +68,13 @@ def checkout(cart, coupons)
   
   couponed_cart = apply_coupons(combined_cart, coupons)
   
-  clearance_cart = apply_clearance(couponed_cart)
+  final_cart = apply_clearance(couponed_cart)
   
   total_price = clearance_cart.sum do |sum, key|
     sum += clearance_cart[key][:price] * clearance_cart[key][:count]
   end
   
   p total_price
-  if()
+  if total_price > 100
+    couponed_cart = apply_
 end
