@@ -91,5 +91,5 @@ def checkout(cart, coupons)
     final_cart = apply_clearance(final_cart, 0.9)
   end
   
-  final_cart
+   p final_cart
 end
