@@ -34,6 +34,7 @@ def apply_coupons(cart, coupons)
             updated_cart[new_key][:count] = 0
             updated_cart[new_key][:price] = new_price
             updated_cart[new_key][:clearance] = cart[key][:clearance]
+            p updated_cart
           end
           
           #p updated_cart[new_key][:count]
