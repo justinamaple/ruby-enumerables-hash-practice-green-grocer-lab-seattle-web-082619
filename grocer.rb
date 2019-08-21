@@ -17,8 +17,6 @@ end
 
 def apply_coupons(cart, coupons)
   updated_cart = cart.clone
-  p updated_cart
-  p coupons
   
   cart.each_pair do |key, value|
     coupons.each do |coupon|
@@ -38,7 +36,6 @@ def apply_coupons(cart, coupons)
     end
   end
   
-  p updated_cart
   updated_cart
 end
 
