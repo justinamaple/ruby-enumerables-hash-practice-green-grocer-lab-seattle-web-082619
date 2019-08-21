@@ -1,4 +1,5 @@
 def consolidate_cart(cart)
+  p cart
   cart.map do |item|
     p item
     item.map do |key, value|
