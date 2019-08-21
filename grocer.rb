@@ -21,7 +21,6 @@ def apply_coupons(cart, coupons)
   cart.each_pair do |key, value|
     coupons.each do |coupon|
       if coupon[:item] == key
-        p updated_cart
         if cart[key][:count] >= coupon[:num]
           updated_cart[key][:count] -= coupon[:num]
 
