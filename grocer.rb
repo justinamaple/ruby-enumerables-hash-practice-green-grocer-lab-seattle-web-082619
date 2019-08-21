@@ -1,18 +1,18 @@
 def consolidate_cart(cart)
-  p cart
+  updated_cart = {}
+  
   cart.each do |item|
-    p item
-    item.map do |key, value|
-      if !cart[key][:count]
-        cart[key][:count] = 1
+    item.each_pair do |key, value|
+      if !updated_cart[key]
+        updated_cart[key] = value
+        updated_cart[key][:count] = 1
       else
-        cart[key][:count] += 1
-        cart.delete(item)
+        updated_cart[key][:count] += 1
       end
     end
   end
   
-  p cart
+  updated_cart
 end
 
 def get_new_key(key)
