@@ -29,7 +29,7 @@ def apply_coupons(cart, coupons)
           
           if !cart[new_key]
             updated_cart[new_key] = {}
-            updated_cart[new_key][:count]
+            updated_cart[new_key][:count] = 0
           end
           
           updated_cart[new_key][:count] = coupon[:num]
