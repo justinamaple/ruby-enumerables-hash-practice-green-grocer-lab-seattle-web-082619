@@ -15,14 +15,6 @@ def consolidate_cart(cart)
   updated_cart
 end
 
-def get_new_key(key)
-  key + " W/COUPON"
-end
-
-def get_new_price(coupon)
-  coupon[:cost] / coupon[:num]
-end
-
 def apply_coupons(cart, coupons)
   updated_cart = cart.clone
   
@@ -31,12 +23,13 @@ def apply_coupons(cart, coupons)
       if coupon[:item] == key
         if updated_cart[key][:count] >= coupon[:num]
           updated_cart[key][:count] -= coupon[:num]
-          
-          new_key = get_new_key(key)
-          new_price = get_new_price(coupon)
+
+          new_key = key + " W/COUPON"
+          new_price = coupon[:cost] / coupon[:num]
+          clearance = cart[key][:clearance]
           
           if !updated_cart[new_key]
-            updated_cart[new_key] = create_new_item(new_key, new_price, true)
+            updated_cart[new_key] = create_new_item(new_key, new_price, clearance)
           end
       
           updated_cart[new_key][:count] += coupon[:num]
