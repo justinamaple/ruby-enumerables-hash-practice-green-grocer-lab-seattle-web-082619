@@ -1,46 +1,46 @@
 def consolidate_cart(cart)
-  hash = {}
+  updated_cart = {}
   
   cart.each do |item|
     item.each_pair do |key, value|
-      if !hash[key]
-        hash[key] = value
-        hash[key][:count] = 1
+      if !updated_cart[key]
+        updated_cart[key] = value
+        updated_cart[key][:count] = 1
       else
-        hash[key][:count] += 1
+        updated_cart[key][:count] += 1
       end
     end
   end
   
-  hash
+  updated_cart
 end
 
 def apply_coupons(cart, coupons)
-  hash = cart.clone
+  updated_cart = cart.clone
   
   cart.each_pair do |key, value|
     coupons.each do |coupon|
       if coupon[:item] == key
         if cart[key][:count] >= coupon[:num]
-          puts hash[key][:count]
-          hash[key][:count] -= coupon[:num]
-          puts hash[key][:count]
-          if hash[key][:count] == 0
-            hash.delete(key)
+          puts updated_cart[key][:count]
+          updated_cart[key][:count] -= coupon[:num]
+          puts updated_cart[key][:count]
+          if updated_cart[key][:count] == 0
+            updated_cart.delete(key)
           end
           new_key = key + " W/COUPON"
           new_price = coupon[:cost] / coupon[:num]
           
-          hash[new_key] = {}
-          hash[new_key][:count] = coupon[:num]
-          hash[new_key][:price] = new_price
-          hash[new_key][:clearance] = cart[key][:clearance]
+          updated_cart[new_key] = {}
+          updated_cart[new_key][:count] = coupon[:num]
+          updated_cart[new_key][:price] = new_price
+          updated_cart[new_key][:clearance] = cart[key][:clearance]
         end
       end
     end
   end
   
-  hash
+  updated_cart
 end
 
 def apply_clearance(cart)
