@@ -27,11 +27,14 @@ def apply_coupons(cart, coupons)
           new_key = key + " W/COUPON"
           new_price = coupon[:cost] / coupon[:num]
           
-          if cart[new_key]
+          if !cart[new_key]
             updated_cart[new_key] = {}
-            updated_cart[new_key][:count] = coupon[:num]
-            updated_cart[new_key][:price] = new_price
-            updated_cart[new_key][:clearance] = cart[key][:clearance]
+            updated_cart[new_key][:count]
+          end
+          
+          updated_cart[new_key][:count] = coupon[:num]
+          updated_cart[new_key][:price] = new_price
+          updated_cart[new_key][:clearance] = cart[key][:clearance]
         end
       end
     end
