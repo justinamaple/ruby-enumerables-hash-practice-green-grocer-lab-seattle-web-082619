@@ -13,7 +13,7 @@ def consolidate_cart(cart)
     end
   end
   
-  cart
+  p cart
 end
 
 def get_new_key(key)
