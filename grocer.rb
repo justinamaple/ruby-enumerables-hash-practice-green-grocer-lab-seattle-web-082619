@@ -66,5 +66,7 @@ end
 def checkout(cart, coupons)
   combined_cart = conolidate_cart(cart)
   
-  couponed_card = combined_cart(coupons)
+  couponed_cart = apply_coupons(combined_cart, coupons)
+  
+  clearance_cart = apply_clearance()
 end
