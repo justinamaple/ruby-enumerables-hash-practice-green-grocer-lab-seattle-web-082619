@@ -76,7 +76,7 @@ def checkout(cart, coupons)
   
   p total_price
   if total_price > 100
-    final_cart = apply_clearance(final_cart)
+    final_cart = apply_clearance(final_cart, 0.9)
   end
   
   final_cart
