@@ -63,7 +63,7 @@ def apply_clearance(cart)
   cart
 end
 
-def apply_clearance(cart)
+def apply_ten_percent_discount(cart)
   cart.map do |key, value|
     if(cart[key][:clearance])
       cart[key][:price] = (cart[key][:price] * 0.8).round(2)
