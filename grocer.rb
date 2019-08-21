@@ -76,5 +76,5 @@ def checkout(cart, coupons)
   
   p total_price
   if total_price > 100
-    couponed_cart = apply_
+    final_cart = apply_ten_percent_discount(final_cart)
 end
