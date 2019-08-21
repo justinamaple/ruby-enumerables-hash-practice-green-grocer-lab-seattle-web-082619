@@ -27,6 +27,7 @@ def apply_coupons(cart, coupons)
           updated_cart[key][:count] -= coupon[:num]
           if updated_cart[key][:count] == 0
             updated_cart.delete(key)
+            cart.delete(key)
           end
           new_key = key + " W/COUPON"
           new_price = coupon[:cost] / coupon[:num]
