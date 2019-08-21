@@ -43,7 +43,10 @@ end
 
 def create_new_item()
   new_item = {
-    { new_key : { :
+    { new_key => { 
+      
+      :
+    }
   }
   updated_cart[new_key][:count] = 0
   updated_cart[new_key][:price] = new_price
