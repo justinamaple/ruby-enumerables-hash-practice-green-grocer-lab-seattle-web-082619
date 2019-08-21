@@ -70,7 +70,7 @@ def checkout(cart, coupons)
   
   final_cart = apply_clearance(couponed_cart)
   
-  total_price = clearance_cart.sum do |sum, key|
+  total_price = final_cart.sum do |sum, key|
     sum += final_cart[key][:price] * final_cart[key][:count]
   end
   
