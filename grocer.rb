@@ -18,10 +18,10 @@ end
 def apply_coupons(cart, coupons)
   updated_cart = cart.clone
   
-  updated_cart.each_pair do |key, value|
+  cart.each_pair do |key, value|
     coupons.each do |coupon|
       if coupon[:item] == key
-        if updated_cart[key][:count] >= coupon[:num]
+        if cart[key][:count] >= coupon[:num]
           updated_cart[key][:count] -= coupon[:num]
 
           new_key = key + " W/COUPON"
