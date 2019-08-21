@@ -63,6 +63,16 @@ def apply_clearance(cart)
   cart
 end
 
+def apply_clearance(cart)
+  cart.map do |key, value|
+    if(cart[key][:clearance])
+      cart[key][:price] = (cart[key][:price] * 0.8).round(2)
+    end
+  end
+  
+  cart
+end
+
 def checkout(cart, coupons)
   combined_cart = conolidate_cart(cart)
   
