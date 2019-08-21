@@ -80,7 +80,6 @@ def checkout(cart, coupons)
   p "after clearance"
   p final_cart
   
-  p final_cart
   total_price = final_cart.sum do |key, value|
     p key
     p value
