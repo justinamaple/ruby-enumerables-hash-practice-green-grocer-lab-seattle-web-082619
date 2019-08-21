@@ -24,6 +24,8 @@ def get_new_price(coupon)
 end
 
 def apply_coupons(cart, coupons)
+  updated_cart = cart.clone
+  
   cart.each_pair do |key, value|
     coupons.each do |coupon|
       if coupon[:item] == key
@@ -43,6 +45,8 @@ def apply_coupons(cart, coupons)
       end
     end
   end
+  
+  updated_cart
 end
 
 def create_new_item(new_key, new_price, clearance)
