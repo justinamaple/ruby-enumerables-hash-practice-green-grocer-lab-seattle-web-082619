@@ -24,7 +24,6 @@ def apply_coupons(cart, coupons)
         if updated_cart[key][:count] >= coupon[:num]
           updated_cart[key][:count] -= coupon[:num]
 
-          new_key = key + " W/COUPON"
           new_price = coupon[:cost] / coupon[:num]
           clearance = 
           
