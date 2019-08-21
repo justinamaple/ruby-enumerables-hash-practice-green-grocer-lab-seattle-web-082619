@@ -23,7 +23,6 @@ def apply_coupons(cart, coupons)
       if coupon[:item] == key
         if cart[key][:count] >= coupon[:num]
           updated_cart[key][:count] -= coupon[:num]
-          cart[key][:count] -= coupon[:num]
           if updated_cart[key][:count] == 0
             updated_cart.delete(key)
           end
