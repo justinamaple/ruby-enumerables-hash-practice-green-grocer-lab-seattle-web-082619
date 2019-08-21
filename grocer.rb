@@ -3,8 +3,6 @@ def consolidate_cart(cart)
   cart.map do |item|
     p item
     item.map do |key, value|
-      p key
-      p value
       if !cart[key][:count]
         cart[key][:count] = 1
       else
