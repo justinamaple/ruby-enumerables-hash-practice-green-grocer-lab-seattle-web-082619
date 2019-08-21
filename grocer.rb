@@ -27,18 +27,18 @@ def apply_coupons(cart, coupons)
   cart.map do |key, value|
     coupons.each do |coupon|
       if coupon[:item] == key
-        if updated_cart[key][:count] >= coupon[:num]
-          updated_cart[key][:count] -= coupon[:num]
+        if cart[key][:count] >= coupon[:num]
+          cart[key][:count] -= coupon[:num]
           
           new_key = get_new_key(key)
           new_price = get_new_price(coupon)
-          clearance = updated_cart[key][:clearance]
+          clearance = cart[key][:clearance]
           
-          if !updated_cart[new_key]
-            updated_cart[new_key] = create_new_item(new_key, new_price, clearance)
+          if !cart[new_key]
+            cart[new_key] = create_new_item(new_key, new_price, clearance)
           end
       
-          updated_cart[new_key][:count] += coupon[:num]
+          cart[new_key][:count] += coupon[:num]
         end
       end
     end
