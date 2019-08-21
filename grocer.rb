@@ -24,6 +24,7 @@ def apply_coupons(cart, coupons)
         if cart[key][:count] >= coupon[:num]
           puts updated_cart[key][:count]
           updated_cart[key][:count] -= coupon[:num]
+          cart[key][:count] -= coupon[:num]
           puts updated_cart[key][:count]
           if updated_cart[key][:count] == 0
             updated_cart.delete(key)
