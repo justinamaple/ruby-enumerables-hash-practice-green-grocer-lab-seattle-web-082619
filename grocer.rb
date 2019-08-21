@@ -35,7 +35,8 @@ def apply_coupons(cart, coupons)
           updated_cart[new_key][:clearance] = cart[key][:clearance]
           
           if updated_cart[key][:count] == 0
-
+            updated_cart.delete(key)
+            cart.delete(key)
           end
         end
       end
