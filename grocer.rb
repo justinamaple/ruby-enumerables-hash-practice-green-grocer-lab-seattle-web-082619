@@ -41,7 +41,7 @@ def apply_coupons(cart, coupons)
   updated_cart
 end
 
-def create_new_item()
+def create_new_item(new_key, new_price, clearance)
   new_item = {
     { new_key => { 
       :count => 0,
