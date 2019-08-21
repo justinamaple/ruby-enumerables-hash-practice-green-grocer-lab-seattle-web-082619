@@ -41,7 +41,7 @@ def get_new_key(key)
   key + " W/COUPON"
 end
 
-def get_new_price
+def get_new_price(coupon)
   coupon[:cost] / coupon[:num]
 end
 
