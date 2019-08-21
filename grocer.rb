@@ -59,6 +59,7 @@ def apply_clearance(cart)
     p value
     p cart[key][:clearance]
     if(cart[key][:clearance])
+      p cart[key][:price] * 0.8
       cart[key][:price] = (cart[key][:price] * 0.8).round(2)
     end
   end
