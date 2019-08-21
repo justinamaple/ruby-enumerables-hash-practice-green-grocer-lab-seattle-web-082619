@@ -46,7 +46,7 @@ def create_new_item()
     { new_key => { 
       :count => 0,
       :price => new_price,
-      :clearance => 
+      :clearance => clearance
     }
   }
   updated_cart[new_key][:count] = 0
