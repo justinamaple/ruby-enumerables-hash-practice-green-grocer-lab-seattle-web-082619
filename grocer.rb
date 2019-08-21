@@ -81,8 +81,8 @@ def checkout(cart, coupons)
   p final_cart
   
   total_price = final_cart.sum do |key, value|
-    p key
-    p value
+    p final_cart[key][:price]
+    p final_cart[key][:count]
     final_cart[key][:price] * final_cart[key][:count]
   end
   
