@@ -74,5 +74,6 @@ def checkout(cart, coupons)
     sum += clearance_cart[key][:price] * clearance_cart[key][:count]
   end
   
+  p total_price
   if()
 end
