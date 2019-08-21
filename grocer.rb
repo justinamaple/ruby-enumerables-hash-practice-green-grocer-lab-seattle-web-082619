@@ -44,8 +44,7 @@ def apply_coupons(cart, coupons)
 end
 
 def create_new_item(new_key, new_price, clearance)
-  { :count => 0, :price => new_price, :clearance => clearance
-  }
+  { :count => 0, :price => new_price, :clearance => clearance }
 end
 
 def apply_clearance(cart)
