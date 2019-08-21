@@ -1,6 +1,6 @@
 def consolidate_cart(cart)
   p cart
-  cart.map do |item|
+  cart.each do |item|
     p item
     item.map do |key, value|
       if !cart[key][:count]
