@@ -64,29 +64,29 @@ def apply_clearance(cart, rate = 0.8)
 end
 
 def checkout(cart, coupons)
-  p "cart"
-  p cart
+#  p "cart"
+#  p cart
   combined_cart = consolidate_cart(cart)
-  p "combined_cart"
-  p combined_cart
+#  p "combined_cart"
+#  p combined_cart
   
-  p "coupons"
-  p coupons
+#  p "coupons"
+#  p coupons
   couponed_cart = apply_coupons(combined_cart, coupons)
-  p "couponed_cart"
-  p couponed_cart
+#  p "couponed_cart"
+#  p couponed_cart
   
   final_cart = apply_clearance(couponed_cart)
-  p "after clearance"
-  p final_cart
+#  p "after clearance"
+#  p final_cart
   
   total_price = final_cart.sum do |key, value|
-    p final_cart[key][:price]
-    p final_cart[key][:count]
+#    p final_cart[key][:price]
+#    p final_cart[key][:count]
     final_cart[key][:price] * final_cart[key][:count]
   end
   
-  p total_price
+#  p total_price
   if total_price > 100
     total_price *= (0.9).round(2)
   end
