@@ -35,7 +35,7 @@ def apply_coupons(cart, coupons)
           new_key = get_new_key(key)
           
           if !updated_cart[new_key]
-            updated_cart[new_key] = create_new_item(get_new_key(key), get_new_price(coupon), true)
+            updated_cart[new_key] = create_new_item(new_key, get_new_price(coupon), true)
           end
       
           updated_cart[new_key][:count] += coupon[:num]
